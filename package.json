@@ -2,14 +2,14 @@
   "name": "allow-origin",
   "version": "1.0.0",
   "private": true,
-  "description": "vidaxl API allow origin",
+  "description": "API allow origin",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/node-modules/urlencode.git"
+    "url": "git@github.com:bannerchi/allow-origin.git"
   },
   "author": "ron.chi",
   "license": "MIT"
