@@ -14,6 +14,7 @@ var express = require('express');
 var allowOrigin = require('allow-origin');
 var app = express();
 var writeList = ['http://xxx.com'];
+// if process.env.NODE_ENV === 'development' auto cross domain
 app.use(allowOrigin(process.env.NODE_ENV, writeList));
 
 ```
