@@ -1,6 +1,6 @@
 {
   "name": "allow-origin",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "API allow origin",
   "main": "index.js",
   "scripts": {
