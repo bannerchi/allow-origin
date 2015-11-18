@@ -9,8 +9,9 @@ module.exports = function(env, writeList){
     return function(req, res, next){
         if(env == 'development'){
             res.setHeader('Access-Control-Allow-Origin', '*');
-            res.setHeader('Access-Control-Allow-Methods', 'GET');
-
+	    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE, CONNECT');
+  	    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+  	    res.setHeader('Access-Control-Allow-Credentials', true);
             return next();
         }
         var origin = req.headers.origin === undefined ? null : req.headers.origin;
@@ -20,7 +21,9 @@ module.exports = function(env, writeList){
         } else {
             if(JSON.stringify(writeList).indexOf(origin) !== -1){
                 res.setHeader('Access-Control-Allow-Origin', origin);
-                res.setHeader('Access-Control-Allow-Methods', 'GET');
+		res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE, CONNECT');
+                res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+                res.setHeader('Access-Control-Allow-Credentials', true);
             }
             next();
         }
