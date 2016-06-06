@@ -10,7 +10,7 @@ module.exports = function(env, writeList){
         if(env == 'development'){
             res.setHeader('Access-Control-Allow-Origin', '*');
             res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE, CONNECT');
-            res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, __setXHR_');
+            res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, __setXHR_, Authorization');
             res.setHeader('Access-Control-Allow-Credentials', true);
             return next();
         }
@@ -22,7 +22,7 @@ module.exports = function(env, writeList){
             if(JSON.stringify(writeList).indexOf(origin) !== -1){
                 res.setHeader('Access-Control-Allow-Origin', origin);
 		        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE, CONNECT');
-                res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, __setXHR_');
+                res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, __setXHR_, Authorization');
                 res.setHeader('Access-Control-Allow-Credentials', true);
             }
             next();
